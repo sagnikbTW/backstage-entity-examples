@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: inventory-counting-library
+  description: Library for managing counters
+  tags:
+    - kotlin
+spec:
+  type: library
+  lifecycle: experimental
+  owner: group:guests
+  system: inventory-app
+  subcomponentOf: inventory-service
+  dependsOn:
+    - api:counter-api

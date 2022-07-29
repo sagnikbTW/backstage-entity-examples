@@ -9,3 +9,4 @@ spec:
     - ./inventory-app/service/inventory-service.yaml
     - ./inventory-app/service/api/inventory-api.yaml
     - ./inventory-app/service/db/inventory-db.yaml
+    - ./inventory-app/service/lib/inventory-lib.yaml
