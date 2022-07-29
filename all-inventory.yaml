@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: all-inventory
+  description: Inventory entities
+spec:
+  targets:
+    - ./inventory-app/inventory-system.yaml
+    - ./inventory-app/service/inventory-service.yaml
+    - ./inventory-app/service/api/inventory-api.yaml
+    - ./inventory-app/service/db/inventory-db.yaml

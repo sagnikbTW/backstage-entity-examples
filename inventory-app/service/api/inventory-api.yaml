@@ -1,0 +1,45 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: inventory-api
+  description: API for managing inventory
+  links:
+    - url: http://localhost:8080/swagger-ui.html
+      title: Swagger UI
+  tags:
+    - http
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:guests
+  system: inventory-app
+  definition: |
+    openapi: 3.0.1
+    info:
+      title: OpenAPI definition
+      version: v0
+    servers:
+      - url: http://localhost:8080
+        description: Generated server url
+    paths:
+      /api/v1/inventory:
+        get:
+          tags:
+            - get-all-inventory-api
+          operationId: getAllInventory
+          responses:
+            "200":
+              description: OK
+              content:
+                '*/*':
+                  schema:
+                    $ref: '#/components/schemas/Inventory'
+    components:
+      schemas:
+        Inventory:
+          required:
+            - name
+          type: object
+          properties:
+            name:
+              type: string
